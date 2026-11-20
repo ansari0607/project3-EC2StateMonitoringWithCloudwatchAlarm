@@ -9,8 +9,13 @@ systemctl enable httpd
 
 echo "<h1>Project 3 CloudWatch Monitoring</h1>" > /var/www/html/index.html
 
-# Wait for instance startup
-sleep 120
+sleep 180
 
-# Generate high CPU load for 15 minutes
-stress --cpu 2 --timeout 900 &
+for i in {1..4}
+do
+  yes > /dev/null &
+done
+
+sleep 900
+
+pkill yes
